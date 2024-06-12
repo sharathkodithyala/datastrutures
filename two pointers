@@ -1,0 +1,14 @@
+/* the data structure it self says it is going to deal woith two pointing at the type while it is compairing time moving time based up on the condition 
+
+the following that that can be helpful while traversing  kind of problems */
+
+
+
+//0.1Two moving pointers, regardless of directions, moving dependently or independently;
+//2.A function that utilizes the entries referenced by the two pointers, which relates to the answer in a way;
+//3.An easy way of deciding which pointer to move;
+//4.A way to process the array when the pointers are moved.
+/* the code goes simlar type but the pointers are 
+ * fast and slow type 
+ * from forward one and backward pointer
+*/

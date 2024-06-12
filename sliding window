@@ -1,0 +1,10 @@
+sliding window  i
+1.it is mainly two types 
+2.this kind of problems mainly involved when there is need of working on the  part of the whole 
+3.first type is fixed size and the second one is dynamic type
+4.fixed type is based up on the given or chosen type of length in the array or datastructure we are wrokingg
+5.second type dynamic window size is changes according to reach the given conditions of the problem
+
+
+
+this is also called windows problems because we are looking out there a part in the whole

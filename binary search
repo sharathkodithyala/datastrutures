@@ -1,0 +1,31 @@
+import java.util.*;
+
+class Solution {
+    public static int findBoundary(List<Boolean> arr) {
+        int left = 0;
+        int right = arr.size() - 1;
+        int boundaryIndex = -1;
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (arr.get(mid)) {
+                boundaryIndex = mid;
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+        return boundaryIndex;
+    }
+
+    public static List<String> splitWords(String s) {
+        return s.isEmpty() ? List.of() : Arrays.asList(s.split(" "));
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        scanner.close();
+        //YOU READ  ANY ARRAY OVER HERE AND YOU CAN PASS T AS INPUT . 
+        int res = findBoundary(arr);
+        System.out.println(res);
+    }
+}

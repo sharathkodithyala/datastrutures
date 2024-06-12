@@ -1,0 +1,21 @@
+public static Node dfs(Node root, int target) {
+    if (root == null) {
+      return null;
+    }
+    if (root.val == target) {
+      return root;
+    }
+    /* returning the  non-null return value from the recursion calls 
+  */
+    Node left = dfs(root.left, target)
+    if (left != null) {
+      return left;
+    }
+    //when left root is null it will return 
+    return dfs(root.right, target)
+}
+/* dfs can be done left and rights nodes while implementing
+dfs aare mainly are more invlo/ved when in the type of solving the puzzles
+while finding the solution
+it willk go back int the state of either succus or fail at the dead end of the option path selection
+*/

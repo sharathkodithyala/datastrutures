@@ -1,0 +1,214 @@
+Trees can be implemented with organising the data in efficient way
+2.tree can be implemented in many ways based upon the choice we made
+3.the most we will read now about the binary trees in the following
+A binary tree is a data structure in which each node has at most two children, referred to as the left child and the right child. Binary trees are a fundamental structure in computer science used to represent hierarchical data and perform efficient searching and sorting.
+=====================================================================================================================
+Key Characteristics:
+Nodes:
+Each node contains a value, and pointers to its left and right children.
+Root:
+The top node of the tree.
+Leaves:
+Nodes that do not have any children.
+Subtrees:
+Each child node and its descendants form a subtree.
+Types of Binary Trees:
+Full Binary Tree:
+Every node other than the leaves has two children.
+Complete Binary Tree:
+All levels, except possibly the last, are fully filled, and all nodes are as far left as possible.
+Perfect Binary Tree:
+All internal nodes have two children, and all leaves are at the same level.
+Balanced Binary Tree:
+The height of the left and right subtrees of any node differ by no more than one.
+Binary Search Tree (BST):
+For each node, all elements in the left subtree are less than the node, and all elements in the right subtree are greater.
+=============================================================================================================
+=======================================================================================================================
+for travesring and acces the trees
+==========================================================================================
+1.In-order Traversal (LNR):
+
+Visit the left subtree.
+Visit the node.
+Visit the right subtree.
+Use Case: Produces a sorted sequence for binary search trees.
+Example:
+Given Binary Tree:
+    1
+   / \
+  2   3
+ / \
+4   5
+
+In-order: 4, 2, 5, 1, 3
+2.Pre-order Traversal (NLR):
+
+Visit the node.
+Visit the left subtree.
+Visit the right subtree.
+Use Case: Useful for creating a copy of the tree. It’s also used in prefix notation.
+Example:
+Given Binary Tree:
+    1
+   / \
+  2   3
+ / \
+4   5
+
+Pre-order: 1, 2, 4, 5, 3
+3.Post-order Traversal (LRN):
+
+Visit the left subtree.
+Visit the right subtree.
+Visit the node.
+Use Case: Useful for deleting a tree because it deletes children before the parent. It’s also used in postfix notation.
+Example:
+Given Binary Tree:
+    1
+   / \
+  2   3
+ / \
+4   5
+
+Post-order: 4, 5, 2, 3, 1
+
+
+==========================================================================
+=========================================================================================
+sample code implemetaions of the travesals of the above explained questions
+=======================================================================================================================
+
+
+these three travesal are genrally considerd under the depth first search types: 
+
+
+
+Inorder traversal:
+class Node {
+    int value;
+    Node left, right;
+
+    public Node(int value) {
+        this.value = value;
+        left = right = null;
+    }
+}
+
+class BinaryTree {
+    Node root;
+
+    void inOrderTraversal(Node node) {
+        if (node == null)
+            return;
+
+        // Traverse left subtree
+        inOrderTraversal(node.left);
+        
+        // Visit the node
+        System.out.print(node.value + " ");
+        
+        // Traverse right subtree
+        inOrderTraversal(node.right);
+    }
+
+    public static void main(String[] args) {
+        BinaryTree tree = new BinaryTree();
+        tree.root = new Node(1);
+        tree.root.left = new Node(2);
+        tree.root.right = new Node(3);
+        tree.root.left.left = new Node(4);
+        tree.root.left.right = new Node(5);
+
+        System.out.println("In-order traversal:");
+        tree.inOrderTraversal(tree.root);
+    }
+}
+======================================================
+preorder traversal
+=====================================================
+class Node {
+    int value;
+    Node left, right;
+
+    public Node(int value) {
+        this.value = value;
+        left = right = null;
+    }
+}
+
+class BinaryTree {
+    Node root;
+
+    void preOrderTraversal(Node node) {
+        if (node == null)
+            return;
+
+        // Visit the node
+        System.out.print(node.value + " ");
+        
+        // Traverse left subtree
+        preOrderTraversal(node.left);
+        
+        // Traverse right subtree
+        preOrderTraversal(node.right);
+    }
+
+    public static void main(String[] args) {
+        BinaryTree tree = new BinaryTree();
+        tree.root = new Node(1);
+        tree.root.left = new Node(2);
+        tree.root.right = new Node(3);
+        tree.root.left.left = new Node(4);
+        tree.root.left.right = new Node(5);
+
+        System.out.println("Pre-order traversal:");
+        tree.preOrderTraversal(tree.root);
+    }
+}
+
+
+
+==================================================
+postoreder traversal
+==================================================
+
+class Node {
+    int value;
+    Node left, right;
+
+    public Node(int value) {
+        this.value = value;
+        left = right = null;
+    }
+}
+
+class BinaryTree {
+    Node root;
+
+    void postOrderTraversal(Node node) {
+        if (node == null)
+            return;
+
+        // Traverse left subtree
+        postOrderTraversal(node.left);
+        
+        // Traverse right subtree
+        postOrderTraversal(node.right);
+        
+        // Visit the node
+        System.out.print(node.value + " ");
+    }
+
+    public static void main(String[] args) {
+        BinaryTree tree = new BinaryTree();
+        tree.root = new Node(1);
+        tree.root.left = new Node(2);
+        tree.root.right = new Node(3);
+        tree.root.left.left = new Node(4);
+        tree.root.left.right = new Node(5);
+        System.out.println("Post-order traversal:");
+        tree.postOrderTraversal(tree.root);
+    }
+}
+
